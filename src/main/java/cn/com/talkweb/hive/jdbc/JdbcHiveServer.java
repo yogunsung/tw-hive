@@ -14,30 +14,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import cn.com.talkweb.hive.jdbc.util.HiveJdbcUtils;
+
 /** 
  * @author songyg 
  * @version  
  * @since JDK 1.6 
  */
 public class JdbcHiveServer {
-	private static String driverName = "org.apache.hadoop.hive.jdbc.HiveDriver";
-	private static String url = "jdbc:hive://10.157.142.163:10000/default";
 	
-	public static void main(String[] args) {
-		try {
-			Class.forName(driverName);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Connection conn = DriverManager.getConnection("url");
-			Statement stmt = conn.createStatement();
-			
-			String sql = "show tables";
-		  ResultSet rs = stmt.executeQuery(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public static void main(String[] args) throws SQLException {
+		String hql = "show tables";
+		Connection conn = HiveJdbcUtils.getConnection();
+		Statement stmt = conn.createStatement();
+	  ResultSet rs = HiveJdbcUtils.excuteHql(conn, stmt, hql);
+	  while(rs.next()){
+		  System.out.println(rs.getString(1));
+	  }
 	}
 }
