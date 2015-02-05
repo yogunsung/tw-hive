@@ -97,22 +97,23 @@ public class HiveJdbcUtils {
 	}
 
 	// 执行sql语句,使用时注意释放资源
-	public static ResultSet excuteHql(Connection conn, Statement stmt,
-			ResultSet rs, String hql) throws SQLException {
-		try {
-			log.info("执行hql语句：" + hql);
-			rs = stmt.executeQuery(hql);
-			log.info("hql语句：" + hql + "执行完毕！");
-			return rs;
-		} catch (SQLException e) {
-			log.info(e.getMessage());
-			rs = null;
-			throw e;
-		} finally {
-			// 释放资源
-			// release(stmt,conn,rs);
+		public static ResultSet excuteHql(Connection conn, Statement stmt,
+				String hql) throws SQLException {
+			ResultSet rs = null;
+			try {
+				log.info("执行hql语句：" + hql);
+				rs = stmt.executeQuery(hql);
+				log.info("hql语句：" + hql + "执行完毕！");
+				return rs;
+			} catch (SQLException e) {
+				log.info(e.getMessage());
+				rs = null;
+				throw e;
+			} finally {
+				// 释放资源
+				// release(stmt,conn,rs);
+			}
 		}
-	}
 
 	/**
 	 * 
