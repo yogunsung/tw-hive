@@ -1,3 +1,7 @@
+# Hive内置服务
+
+---
+
 Hive内部自带了许多的服务，我们可以在运行时用–service选项来明确指定使用什么服务，如果你不知道Hive内部有哪些服务，可以用如下命令来查看帮助。
 ```python 
 hive --service help
