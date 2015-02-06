@@ -49,7 +49,7 @@ partition_spec: PARTITION (partition_col = partition_col_value, partition_col = 
 ```ptyhon
 ALTER TABLE TEST_SYG ADD PARTITION (dt=20150204) location '/tmp/hive/test_syg' 
 ```
-加载/tmp/hive/test_syg目录下的所有文件到TEST_SYG表中。
+添加分区的同时，加载/tmp/hive/test_syg目录下的所有文件到TEST_SYG表中。
 
 ###删除分区
 ```ptyhon
