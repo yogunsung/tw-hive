@@ -4,14 +4,14 @@
 
 ###分类
 1. DATABASE相关
- 2. TABLE相关
- 3. 数据存储相关SDS
- 4. COLUMN相关
- 5. SERDE相关(序列化)
- 6. PARTITION相关(分区)
- 7. SKEW相关(数据倾斜)
- 8. BUCKET相关(分桶)
- 9. PRIVS相关(权限管理)
+2. TABLE相关
+3. 数据存储相关SDS
+4. COLUMN相关
+5. SERDE相关(序列化)
+6. PARTITION相关(分区)
+7. SKEW相关(数据倾斜)
+8. BUCKET相关(分桶)
+9. PRIVS相关(权限管理)
 
 ###Hive元数据表
 | 表名        | 说明                |  关联键  |
