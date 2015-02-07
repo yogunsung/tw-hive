@@ -2,7 +2,7 @@
 
 ---
 
-Hive内部自带了许多的服务，我们可以在运行时用–service选项来明确指定使用什么服务，如果你不知道Hive内部有哪些服务，可以用如下命令来查看帮助。
+Hive内部自带了许多的服务，我们可以在运行时用--service选项来明确指定使用什么服务，如果你不知道Hive内部有哪些服务，可以用如下命令来查看帮助。
 ```python 
 hive --service help
 ```
@@ -34,16 +34,18 @@ hive --service hiveserver -p 10002  -p参数用来指定监听端口
 ```
   或者使用默认端口并在后台运行
 ```python 
-nohup hive –service hiveserver & 
+nohup hive --service hiveserver & 
 ```
 ```python
 nohup hive --service hiveserver >> hiveserver.log 2>&1 &
 echo $! > hive-server.pid
 ```
 
-
 ###hwi
 hive web interface的缩写，它是Hive的Web接口，是hive cli的一个web替换方案。
+```python
+nohup bin/hive --service hwi > /dev/null 2> /dev/null &
+```
 ###jar
 与Hadoop jar等价的Hive的接口，这是运行类路径中同时包含Hadoop和Hive类的Java应用程序的简便方式。
 ### metastore
