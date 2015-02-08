@@ -8,7 +8,7 @@ PS：Hive版本为0.10.0-cdh4.3.2
 ```python
 "jdbc:hive://localhost:10000/default". Currently, the only dbname supported is "default".
 ```
- 2.从hive导出数据到本地时注意指定的目录`/home/bigdata/syg`。如果指定的目录存在，hive会先删除该目录下的所有文件。
+ 2.从hive导出数据到本地时注意指定的目录`/home/bigdata/syg`。如果指定的目录存在，hive会先删除该目录下的所有文件。如果目录不存在，则会创建。
 ```python 
-insert overwrite local directory `'/home/bigdata/syg' select * from syg;
+insert overwrite local directory '/home/bigdata/syg' select * from syg;
 ```
