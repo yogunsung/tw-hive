@@ -22,7 +22,7 @@ insert into table test select id, name, tel from syg;
 
 CTAS（create table .. as select）
 ```python
-insert into table test select id, name, tel from syg;
+hive> create table test_syg_ctas as select * from syg;
 ```
 ###Tips
 hive版本在0.11.0及以后才支持导出数据时指定分隔符。
