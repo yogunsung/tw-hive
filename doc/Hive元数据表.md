@@ -1,7 +1,5 @@
 # Hive元数据表
 
----
-
 ###分类
 1. DATABASE相关
 2. TABLE相关

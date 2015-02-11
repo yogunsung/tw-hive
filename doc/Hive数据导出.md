@@ -1,7 +1,5 @@
 # Hive数据导出
 
----
-
 ###导出文件到本地系统
 ```python
 hive> insert overwrite local directory '/home/bigdata/syg' select * from syg;
