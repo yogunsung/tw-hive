@@ -2,7 +2,7 @@
 
 PS：Hive版本为0.10.0-cdh4.3.2
 
-###TIPS
+###Tips
 
  1.使用jdbc方式连接hiveserver，只能使用默认的数据库即default。官方文档说明如下：
 ```python
